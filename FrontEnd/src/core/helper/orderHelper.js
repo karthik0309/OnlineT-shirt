@@ -6,12 +6,12 @@ export const createOrder = (userId, token, orderData) => {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify({ order: orderData })
+    body: JSON.stringify({ order: orderData }),
   })
-    .then(reponse => {
-      return Response.json();
+    .then((reponse) => {
+      return reponse.json();
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 };

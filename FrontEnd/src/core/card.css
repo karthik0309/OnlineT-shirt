@@ -1,0 +1,19 @@
+.product__info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+}
+.product__info > h5,
+p {
+  color: white;
+  margin-left: 31px;
+}
+.product__info > button {
+  width: 100px;
+}
+.product__card {
+  border: 1px solid black;
+  margin-left: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}

@@ -1,0 +1,10 @@
+.toast  {
+  background-color: aquamarine !important;
+  color: black !important;
+  animation-name: move !important;
+
+}
+@keyframes move{
+  from {top:50;right: 0;}
+  to {top:50; right: 30;}
+}

@@ -19,18 +19,18 @@ const AddCategory = () => {
     </div>
   );
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     setError("");
     setName(event.target.value);
   };
 
-  const onSubmit = event => {
+  const onSubmit = (event) => {
     event.preventDefault();
     setError("");
     setSuccess(false);
 
     //backend request fired
-    createCategory(user._id, token, { name }).then(data => {
+    createCategory(user._id, token, { name }).then((data) => {
       if (data.error) {
         setError(true);
       } else {

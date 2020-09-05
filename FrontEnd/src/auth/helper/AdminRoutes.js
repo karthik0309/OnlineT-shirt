@@ -6,14 +6,14 @@ const AdminRoute = ({ component: Component, ...rest }) => {
   return (
     <Route
       {...rest}
-      render={props =>
+      render={(props) =>
         isAutheticated() && isAutheticated().user.role === 1 ? (
           <Component {...props} />
         ) : (
           <Redirect
             to={{
               pathname: "/signin",
-              state: { from: props.location }
+              state: { from: props.location },
             }}
           />
         )

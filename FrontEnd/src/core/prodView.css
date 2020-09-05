@@ -1,0 +1,31 @@
+.prod__info {
+  margin-top: 70px;
+  font-family: sans-serif;
+  width: 350px;
+}
+.prod__info > p {
+  font-size: large;
+  color: whitesmoke;
+  margin-left: 0;
+}
+.prod__info > button {
+  border-radius: 100px;
+  margin: 10px;
+  margin-left: 0;
+}
+.prod .image__img {
+  height: 350px !important;
+  margin: 40px 3%;
+}
+.empty {
+  height: 95px;
+}
+
+.toast {
+  background-color: aquamarine !important;
+  color: black !important;
+}
+.toast-header {
+  background-color: aquamarine !important;
+  color: black !important;
+}

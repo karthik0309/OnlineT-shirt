@@ -9,20 +9,20 @@ const Signup = () => {
     email: "",
     password: "",
     error: "",
-    success: false
+    success: false,
   });
 
   const { name, email, password, error, success } = values;
 
-  const handleChange = name => event => {
+  const handleChange = (name) => (event) => {
     setValues({ ...values, error: false, [name]: event.target.value });
   };
 
-  const onSubmit = event => {
+  const onSubmit = (event) => {
     event.preventDefault();
     setValues({ ...values, error: false });
     signup({ name, email, password })
-      .then(data => {
+      .then((data) => {
         if (data.error) {
           setValues({ ...values, error: data.error, success: false });
         } else {
@@ -32,7 +32,7 @@ const Signup = () => {
             email: "",
             password: "",
             error: "",
-            success: true
+            success: true,
           });
         }
       })
@@ -117,7 +117,6 @@ const Signup = () => {
       {successMessage()}
       {errorMessage()}
       {signUpForm()}
-      <p className="text-white text-center">{JSON.stringify(values)}</p>
     </Base>
   );
 };

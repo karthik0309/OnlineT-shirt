@@ -19,7 +19,7 @@ const AddProduct = () => {
     error: "",
     createdProduct: "",
     getaRedirect: false,
-    formData: ""
+    formData: "",
   });
 
   const {
@@ -33,11 +33,11 @@ const AddProduct = () => {
     error,
     createdProduct,
     getaRedirect,
-    formData
+    formData,
   } = values;
 
   const preload = () => {
-    getCategories().then(data => {
+    getCategories().then((data) => {
       //console.log(data);
       if (data.error) {
         setValues({ ...values, error: data.error });
@@ -51,10 +51,10 @@ const AddProduct = () => {
     preload();
   }, []);
 
-  const onSubmit = event => {
+  const onSubmit = (event) => {
     event.preventDefault();
     setValues({ ...values, error: "", loading: true });
-    createaProduct(user._id, token, formData).then(data => {
+    createaProduct(user._id, token, formData).then((data) => {
       if (data.error) {
         setValues({ ...values, error: data.error });
       } else {
@@ -66,13 +66,13 @@ const AddProduct = () => {
           photo: "",
           stock: "",
           loading: false,
-          createdProduct: data.name
+          createdProduct: data.name,
         });
       }
     });
   };
 
-  const handleChange = name => event => {
+  const handleChange = (name) => (event) => {
     const value = name === "photo" ? event.target.files[0] : event.target.value;
     formData.set(name, value);
     setValues({ ...values, [name]: value });

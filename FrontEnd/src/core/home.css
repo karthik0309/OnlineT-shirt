@@ -1,0 +1,32 @@
+.shirt__grid {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.shirt__grid::-webkit-scrollbar {
+  display: none;
+}
+.product: {
+  height: 300px;
+}
+.shirts {
+  margin-left: 15px;
+}
+
+.shirt__row {
+  display: flex;
+  flex-direction: column;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.shirt__row::-webkit-scrollbar {
+  display: none;
+}
+.shirt__categ {
+  position: sticky;
+  left: 20px;
+  color: white;
+  font-size: 2.5rem;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}

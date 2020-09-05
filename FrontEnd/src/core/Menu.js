@@ -1,34 +1,34 @@
 import React, { Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { signout, isAutheticated } from "../auth/helper";
-
+import "../styles.css";
 const currentTab = (history, path) => {
   if (history.location.pathname === path) {
-    return { color: "#2ecc72" };
+    return { color: "#FFFFFF" };
   } else {
     return { color: "#FFFFFF" };
   }
 };
 
 const Menu = ({ history }) => (
-  <div>
-    <ul className="nav nav-tabs bg-dark">
-      <li className="nav-item">
+  <div className="mb-2">
+    <ul className="nav nav-tab bg-success fixed-top">
+      <li className=" help nav-item">
         <Link style={currentTab(history, "/")} className="nav-link" to="/">
           Home
         </Link>
       </li>
-      <li className="nav-item">
+      <li className=" help nav-item">
         <Link
           style={currentTab(history, "/cart")}
-          className="nav-link"
+          className=" help nav-link"
           to="/cart"
         >
           Cart
         </Link>
       </li>
       {isAutheticated() && isAutheticated().user.role === 0 && (
-        <li className="nav-item">
+        <li className=" help nav-item">
           <Link
             style={currentTab(history, "/user/dashboard")}
             className="nav-link"
@@ -39,7 +39,7 @@ const Menu = ({ history }) => (
         </li>
       )}
       {isAutheticated() && isAutheticated().user.role === 1 && (
-        <li className="nav-item">
+        <li className=" help nav-item">
           <Link
             style={currentTab(history, "/admin/dashboard")}
             className="nav-link"
@@ -51,7 +51,7 @@ const Menu = ({ history }) => (
       )}
       {!isAutheticated() && (
         <Fragment>
-          <li className="nav-item">
+          <li className=" help nav-item">
             <Link
               style={currentTab(history, "/signup")}
               className="nav-link"
@@ -60,7 +60,7 @@ const Menu = ({ history }) => (
               Signup
             </Link>
           </li>
-          <li className="nav-item">
+          <li className="  help nav-item">
             <Link
               style={currentTab(history, "/signin")}
               className="nav-link"
@@ -72,7 +72,7 @@ const Menu = ({ history }) => (
         </Fragment>
       )}
       {isAutheticated() && (
-        <li className="nav-item">
+        <li className=" help nav-item">
           <span
             className="nav-link text-warning"
             onClick={() => {

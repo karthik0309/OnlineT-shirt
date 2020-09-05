@@ -1,0 +1,14 @@
+.image {
+  margin: 20px;
+}
+.image__img {
+  height: 200px;
+  object-fit: contain;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 100ms ease-in;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
+.image__img:hover {
+  transform: scaleY(1.02);
+}

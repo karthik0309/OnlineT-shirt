@@ -1,7 +1,6 @@
 {
   "name": "projbackend",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js"
@@ -20,11 +19,12 @@
     "formidable": "^1.2.1",
     "i": "^0.3.6",
     "jsonwebtoken": "^8.5.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.20",
     "mongoose": "^5.7.7",
     "morgan": "^1.9.1",
     "nodemon": "^1.19.4",
-    "npm": "^6.13.0",
+    "npm": "^6.14.8",
     "uuid": "^3.3.3"
-  }
+  },
+  "description": ""
 }

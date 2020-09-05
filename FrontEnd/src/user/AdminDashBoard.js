@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const AdminDashBoard = () => {
   const {
-    user: { name, email, role }
+    user: { name, email, role },
   } = isAutheticated();
 
   const adminLeftSide = () => {

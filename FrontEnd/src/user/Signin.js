@@ -6,32 +6,32 @@ import { signin, authenticate, isAutheticated } from "../auth/helper";
 
 const Signin = () => {
   const [values, setValues] = useState({
-    email: "a@hitesh.com",
-    password: "12345",
+    email: "karthik392001@gmail.com",
+    password: "1234",
     error: "",
     loading: false,
-    didRedirect: false
+    didRedirect: false,
   });
 
   const { email, password, error, loading, didRedirect } = values;
   const { user } = isAutheticated();
 
-  const handleChange = name => event => {
+  const handleChange = (name) => (event) => {
     setValues({ ...values, error: false, [name]: event.target.value });
   };
 
-  const onSubmit = event => {
+  const onSubmit = (event) => {
     event.preventDefault();
     setValues({ ...values, error: false, loading: true });
     signin({ email, password })
-      .then(data => {
+      .then((data) => {
         if (data.error) {
           setValues({ ...values, error: data.error, loading: false });
         } else {
           authenticate(data, () => {
             setValues({
               ...values,
-              didRedirect: true
+              didRedirect: true,
             });
           });
         }
@@ -42,9 +42,9 @@ const Signin = () => {
   const performRedirect = () => {
     if (didRedirect) {
       if (user && user.role === 1) {
-        return <Redirect to="/admin/dashboard" />;
+        return <Redirect to="/" />;
       } else {
-        return <Redirect to="/user/dashboard" />;
+        return <Redirect to="/" />;
       }
     }
     if (isAutheticated()) {
@@ -116,8 +116,8 @@ const Signin = () => {
       {errorMessage()}
       {signInForm()}
       {performRedirect()}
-
-      <p className="text-white text-center">{JSON.stringify(values)}</p>
+      <br />
+      <br />
     </Base>
   );
 };
